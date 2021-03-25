@@ -1,0 +1,1292 @@
+body {
+    overflow-x: hidden;
+}
+
+/*가운데 영역*/
+.container {
+    position: relative;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+/*로우 영역*/
+.row {
+    padding: 0 28px;
+}
+
+/* 모바일 메뉴 */
+#mNav {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: none;
+}
+
+#mNav {
+    position: relative;
+}
+
+#header .container .icons {
+    position: absolute;
+    right: 0px;
+    top: 10px;
+    z-index: 999;
+}
+
+#header .container .icons a {
+    display: inline-block;
+    float: left;
+    width: 25px;
+    padding-right: 15px;
+}
+
+#header .container .icons .cart {
+    margin-right: 0;
+}
+
+.ham {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+    z-index: 99;
+}
+
+.ham span {
+    display: block;
+    width: 35px;
+    height: 2px;
+    background: #fff;
+    margin-bottom: 10px;
+}
+
+.ham span:nth-child(1).active {
+    position: absolute;
+    top: 24px;
+    transform: rotate(45deg);
+    transition: 0.5s;
+    background: #000;
+}
+
+.ham span:nth-child(2).active {
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.ham span:nth-child(3).active {
+    position: absolute;
+    top: 24px;
+    left: 10px;
+    transform: rotate(-45deg);
+    transition: 0.5s;
+    background: #000;
+}
+
+.bg {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    opacity: 0;
+    visibility: hidden;
+    transition: 1s;
+}
+
+.bg.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.ham-menu {
+    position: absolute;
+    width: 50%;
+    height: 100vh;
+    right: -100%;
+    background-color: white;
+    transition: 1s;
+}
+
+.ham-menu.active {
+    right: -100px;
+}
+
+.nav {
+    position: absolute;
+    top: 13%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-left: 150px;
+    width: 500px;
+}
+
+.nav.active {
+    display: block;
+}
+
+.nav .nav-list {
+    font-size: 18px;
+}
+
+.nav .nav-list ul li a {
+    display: block;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.nav .nav-list ul li:hover a {
+    color: #333;
+}
+
+/* 헤더 */
+.header {
+    position: relative;
+    width: 100%;
+    z-index: 99;
+    top: 0;
+}
+
+.header .mainmenu {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 45px 0 0 0;
+    z-index: 9;
+    width: 100%;
+    text-align: center;
+}
+
+.header .mainmenu li {
+    position: relative;
+    float: left;
+    width: 25%;
+}
+
+.header .mainmenu li a {
+    display: block;
+    color: #fff;
+    font-size: 19px;
+}
+
+.header .mainmenu .icons a {
+    display: block;
+    float: left;
+    margin-top: 35px;
+}
+
+.header .mainmenu .icons a img {
+    width: 100%;
+}
+
+.header .mainmenu li .submenu {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.header .mainmenu li .submenu li {
+    width: 100%;
+}
+
+.header .mainmenu li .submenu li a {
+    display: block;
+    color: #fff;
+    font-size: 17px;
+    font-weight: lighter;
+}
+
+.header .mainmenu li .submenu li:hover {
+    font-weight: bold;
+}
+
+.header .mainmenu li:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+    transition: 0.5s;
+}
+
+.header .mainmenu li:nth-of-type(2) .submenu li:nth-of-type(3) .submenu2 {
+    opacity: 0;
+}
+
+.header .mainmenu li:nth-of-type(2) .submenu li:nth-of-type(3) .submenu2 li a {
+    display: block;
+    font-weight: 100;
+}
+
+.header .mainmenu li:nth-of-type(2) .submenu li:nth-of-type(3):hover .submenu2 {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.header .mainmenu li:nth-of-type(2) .submenu li:nth-of-type(3):hover .submenu2 li :hover {
+    font-weight: bold;
+}
+
+.header .mainlogo {
+    display: block;
+}
+
+.header .mainlogo .logo {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10px;
+    max-width: 90px;
+    max-height: 90px;
+    transition: 0.5s;
+    padding-right: 30px;
+    z-index: 999999;
+}
+
+.header .mainlogo .logo img {
+    width: 100%;
+    z-index: 999999;
+}
+
+.header .mainlogo .logo img:hover {
+    transform: rotate(180deg);
+    transition: 0.5s;
+}
+
+/* 메인 */
+#main {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url(../img/main.png) center no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+#main p {
+    position: absolute;
+    left: 50%;
+    display: block;
+    font-size: 65px;
+    font-weight: 100;
+    color: #fff;
+    opacity: 0;
+    transition: all 1s;
+}
+
+#main p.animate {
+    opacity: 1;
+    transition-delay: 0.5s;
+}
+
+#main span {
+    display: block;
+    font-size: 24px;
+    font-weight: lighter;
+    color: #fff;
+    margin-top: 20px;
+    opacity: 0;
+    transition: all 1s;
+}
+
+#main span.animate {
+    opacity: 1;
+    transition-delay: 1.2s;
+}
+
+/* 쇼핑 */
+#shop {
+    margin-top: 200px;
+    overflow: hidden;
+}
+
+.shop .serum-area {
+    position: relative;
+    display: block;
+    width: 48%;
+    margin-right: 4%;
+    float: left;
+    overflow: hidden;
+}
+
+.shop .serum-area img {
+    width: 100%;
+}
+
+.shop .serum-area .hover {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    transform: scale(1.1);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.shop .serum-area:hover .hover {
+    transform: scale(1);
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.shop .serum-area .btn {
+    position: absolute;
+    bottom: 12%;
+    display: block;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 17px 90px;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 100;
+    transition: 0.5s;
+    white-space: nowrap;
+}
+
+.shop .serum-area .btn:hover {
+    background: #fff;
+    color: #333;
+    border: 1px solid #333;
+    transition: 0.5s;
+}
+
+.shop .stuff-area {
+    position: relative;
+    display: block;
+    width: 48%;
+    float: right;
+    overflow: hidden;
+}
+
+.shop .stuff-area img {
+    width: 100%;
+}
+
+.shop .stuff-area .hover {
+    position: absolute;
+    height: 100%;
+    right: 0;
+    transform: scale(1.1);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.shop .stuff-area:hover .hover {
+    transform: scale(1);
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.shop .stuff-area .btn {
+    position: absolute;
+    bottom: 12%;
+    display: block;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 17px 90px;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 100;
+    transition: 0.5s;
+    white-space: nowrap;
+}
+
+.shop .stuff-area .btn:hover {
+    background: #fff;
+    color: #333;
+    border: 1px solid #333;
+    transition: 0.5s;
+}
+
+/* 브랜드 */
+#brand {
+    width: 100%;
+    height: 1000px;
+    padding: 80px 0 50px 0;
+    background: url(../img/brand-bg.png) center;
+    background-attachment: fixed;
+    background-size: cover;
+    box-sizing: border-box;
+    margin-top: 200px;
+    overflow-y: scroll;
+}
+
+#brand::-webkit-scrollbar {
+    display: none;
+}
+
+#brand .first-area {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#brand .first-area .img {
+    position: absolute;
+    left: 15%;
+    max-width: 580px;
+}
+
+#brand .first-area .img img {
+    display: block;
+    width: 100%;
+}
+
+#brand .first-area .desc {
+    display: block;
+    position: absolute;
+    top: 27%;
+    right: 15%;
+    font-size: 32px;
+    font-weight: 100;
+    color: #fff;
+}
+
+#brand .second-area {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 50px 0 50px 0;
+    box-sizing: border-box;
+}
+
+#brand .second-area .img {
+    display: block;
+}
+
+#brand .second-area .img .img1 {
+    position: absolute;
+    display: block;
+    left: 29%;
+    top: 30%;
+    max-width: 600px;
+    width: 100%;
+    z-index: 4;
+}
+
+#brand .second-area .img .img2 {
+    position: absolute;
+    display: block;
+    left: 50%;
+    max-width: 550px;
+    width: 100%;
+    z-index: 3;
+}
+
+#brand .second-area .desc {
+    display: block;
+    position: absolute;
+    top: 12%;
+    left: 6%;
+    text-align: right;
+    font-size: 32px;
+    font-weight: 100;
+    color: #fff;
+    z-index: 9;
+}
+
+/* 제품 슬라이드 */
+#product {
+    width: 100%;
+    height: inherit;
+    margin-top: 200px;
+    margin-bottom: 150px;
+    box-sizing: border-box;
+}
+
+.product {
+    position: relative;
+}
+
+.product .text {
+    margin: 150px 0;
+}
+
+.product .text h1 {
+    text-align: center;
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.product .text p {
+    display: block;
+    text-align: center;
+    font-size: 21px;
+    font-weight: 300;
+    margin-top: 20px;
+}
+
+.product .text .btn {
+    position: absolute;
+    left: 50%;
+    top: 110%;
+    transform: translateX(-50%);
+    display: inline-block;
+    padding: 12px 45px;
+    border: 1px solid #333;
+    border-radius: 3px;
+    color: #333;
+    font-size: 17px;
+    font-weight: 100;
+    transition: 0.5s;
+}
+
+.product .btn:hover {
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+.product .slider {
+    position: relative;
+    width: 100%;
+}
+
+.product .slider .swiper-slide {
+    position: relative;
+    width: 33.3333%;
+    float: left;
+}
+
+.product .slider .swiper-slide .img-box {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.product .slider .swiper-slide .img-box img {
+    width: 100%;
+}
+
+.product .slider .swiper-slide .img-box .info {
+    position: absolute;
+    text-align: center;
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.product .slider .swiper-slide .img-box .info strong {
+    font-size: 20px;
+}
+
+.product .slider .swiper-slide .img-box .info p {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.product .slider .swiper-slide .hover-box {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.product .slider .swiper-slide .hover-box img {
+    width: 100%;
+}
+
+.product .slider .swiper-slide:hover .hover-box {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.swiper-slide:after {
+    position: static;
+    background: none;
+}
+
+/* 설명 */
+#desc {
+    position: relative;
+    margin-top: 200px;
+    background: url(../img/desc-bg.png) center no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 400px;
+    padding: 70px 0 70px 0;
+    box-sizing: border-box;
+}
+
+#desc img {
+    display: block;
+    max-width: 350px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#desc .text-area {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    animation-delay: 0.5s;
+    z-index: 11;
+}
+
+#desc .text-area h1 {
+    font-size: 27px;
+    font-weight: 700;
+}
+
+#desc .text-area span {
+    display: block;
+    font-size: 17px;
+    font-weight: lighter;
+    margin-top: 30px;
+}
+
+#desc .text-area p {
+    display: block;
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 21px;
+}
+
+/* 구매처 */
+.stockist {
+    margin: 150px 0;
+}
+
+.stockist .left-area {
+    position: relative;
+    width: 60%;
+    float: left;
+}
+
+.stockist .left-area .img01 {
+    max-width: 70%;
+}
+
+.stockist .left-area .img02 {
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    max-width: 70%;
+    animation-delay: 0.5s;
+}
+
+.stockist .right-area {
+    width: 40%;
+    float: right;
+}
+
+.stockist .right-area .text {
+    padding: 30% 0;
+}
+
+.stockist .right-area .text h1 {
+    display: block;
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.stockist .right-area .text span {
+    display: block;
+    font-size: 21px;
+    font-weight: 300;
+    line-height: 40px;
+    margin-top: 20px;
+}
+
+.stockist .right-area .text .btn {
+    display: inline-block;
+    padding: 12px 45px;
+    border: 1px solid #333;
+    border-radius: 3px;
+    color: #333;
+    font-size: 17px;
+    font-weight: 100;
+    margin-top: 30px;
+    transition: 0.5s;
+}
+
+/* 로고 */
+#logo {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    margin-top: 1000px;
+    padding: 40px 0;
+    overflow: hidden;
+}
+
+#logo .logo {
+    width: 10%;
+    margin-right: 5%;
+    float: left;
+    /*    animation: wave 10s linear infinite;*/
+}
+
+#logo .logo img {
+    width: 100%;
+}
+
+
+@keyframes wave {
+    /*
+    from {
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+    }
+
+    to {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+*/
+    /*
+    100% {
+        transform: translateX(-200%);
+    }
+*/
+}
+
+
+
+
+#logo .logo img {
+    width: 100%;
+}
+
+/* 푸터 */
+#footer {
+    width: 100%;
+    height: 600px;
+    background: #e5cdae;
+}
+
+#footer .row {
+    padding: 75px 0;
+}
+
+.footer {
+    width: 100%;
+    margin: 0 auto;
+    background: #ddd;
+}
+
+.footer h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.footer div {
+    width: 16%;
+    float: left;
+    text-align: center;
+}
+
+.footer .custom {
+    color: #fff;
+}
+
+.footer .bank b {
+    display: block;
+    color: #fff;
+}
+
+.footer .bank strong {
+    color: #fff;
+}
+
+.footer .bank span {
+    font-weight: 300;
+}
+
+.footer .account li a {
+    color: #fff;
+}
+
+.footer .del p {
+    color: #fff;
+}
+
+.footer .desk li a {
+    color: #fff;
+}
+
+.footer .sns {
+    margin-right: 0;
+}
+
+.footer .sns a {
+    display: inline-block;
+    width: 24px;
+    margin-right: 2%;
+}
+
+.footer .sns a img {
+    width: 100%;
+}
+
+.footer .footer-bottom {
+    margin-top: 100px;
+    width: 100%;
+}
+
+.footer .footer-bottom ul {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.footer .footer-bottom ul li a {
+    color: #fff;
+    font-size: 15px;
+    margin-right: 1%;
+}
+
+.footer .footer-bottom .text-area {
+    width: 100%;
+    text-align: center;
+}
+
+.footer .footer-bottom p {
+    text-align: center;
+    font-weight: 300;
+    color: #fff;
+}
+
+.footer .footer-bottom span {
+    text-align: center;
+    color: #fff;
+}
+
+.footer .footer-bottom strong {
+    text-align: center;
+    color: #fff;
+}
+
+
+/* 미디어쿼리 */
+
+@media (max-width: 1290px) {
+    #main p {
+        /*        top: 45%;*/
+    }
+
+    #main span {
+        top: 60%;
+    }
+
+    #brand .first-area .desc {
+        right: 6%;
+    }
+
+    #brand .second-area .desc {
+        left: 18%;
+    }
+
+    #desc .text-area h1 {
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 1024px) {
+    #mNav {
+        display: block;
+    }
+
+    .header .mainmenu {
+        display: none;
+    }
+
+    .header .logo {
+        width: 70px;
+        height: 70px;
+    }
+
+    #main p {
+        /*        top: 35%;*/
+        font-size: 55px;
+    }
+
+    #main span {
+        /*        top: 48%;*/
+        font-size: 20px;
+    }
+
+    #brand .first-area .img {
+        max-width: 620px;
+    }
+
+    #brand .first-area .desc {
+        font-size: 30px;
+        top: 61%;
+        left: 16%;
+    }
+
+    #brand .second-area .img .img1 {
+        max-width: 550px;
+        left: 22%;
+        top: 27%;
+    }
+
+    #brand .second-area .img .img2 {
+        max-width: 500px;
+        left: 40%;
+    }
+
+    #brand .second-area .desc {
+        left: 21.7%;
+        top: 89%;
+        font-size: 30px;
+
+    }
+
+    .product .slider .slick-next {
+        width: 55px;
+        height: 55px;
+    }
+}
+
+@media (max-width: 960px) {
+    #main p {
+        /*        top: 30%;*/
+        font-size: 52px;
+    }
+
+    #main span {
+        /*        top: 43%;*/
+        font-size: 19px;
+    }
+
+    .shop .serum-area .btn {
+        bottom: 50px;
+        padding: 14px 75px;
+    }
+
+    .shop .stuff-area .btn {
+        bottom: 50px;
+        padding: 14px 75px;
+    }
+
+    #brand .first-area .img {
+        max-width: 500px;
+    }
+
+    #brand .first-area .desc {
+        font-size: 27px;
+        top: 58%;
+        left: 15%;
+    }
+
+    #brand .second-area .img .img1 {
+        max-width: 500px;
+        left: 22%;
+        top: 27%;
+    }
+
+    #brand .second-area .img .img2 {
+        max-width: 450px;
+        left: 40%;
+    }
+
+    #brand .second-area .desc {
+        top: 84%;
+        font-size: 27px;
+    }
+
+    .product .slider .slide {
+        width: 70%;
+    }
+
+    .product .text {
+        margin-top: 90px;
+    }
+
+    .product h1 {
+        font-size: 34px;
+    }
+
+    .product p {
+        font-size: 14px;
+    }
+
+    .product .text .btn {
+        padding: 10px 38px;
+    }
+
+    .product .slider .slide .img-box .info {
+        border: -3%;
+    }
+
+
+    .product .slider .slide .img-box .info strong {
+        font-size: 15px;
+    }
+
+    .product .slick-slide {
+        width: auto;
+    }
+
+    #desc .text-area span {
+        font-size: 16px;
+    }
+
+    .stockist .right-area .text h1 {
+        font-size: 34px;
+    }
+
+    .stockist .right-area .text span {
+        font-size: 18px;
+        line-height: 35px;
+    }
+}
+
+@media (max-width: 768px) {
+    #main p {
+        /*        top: 25%;*/
+        font-size: 40px;
+        line-height: 55px;
+    }
+
+    #main span {
+        /*        top: 35%;*/
+        font-size: 16px;
+    }
+
+    .shop {
+        margin-top: 0;
+    }
+
+    .shop .serum-area {
+        width: 96%;
+        margin-right: 0;
+    }
+
+    .shop .stuff-area {
+        width: 96%;
+        float: none;
+    }
+
+    .shop .stuff-area .hover {
+        height: 100%;
+    }
+
+    #brand .first-area .img {
+        max-width: 500px;
+        left: 12%;
+    }
+
+    #brand .first-area .desc {
+        left: 13%;
+    }
+
+    #brand .second-area .img .img1 {
+        max-width: 500px;
+        left: 10%;
+        top: 27%;
+    }
+
+    #brand .second-area .img .img2 {
+        max-width: 450px;
+        left: 37%;
+    }
+
+    #brand .second-area .desc {
+        left: 17%;
+        font-size: 24px;
+    }
+
+    #desc .text-area h1 {
+        font-size: 24px;
+    }
+
+    #desc .text-area span {
+        font-size: 15px;
+    }
+
+    #desc .text-area p {
+        font-size: 18px;
+    }
+
+    .stockist .right-area .text h1 {
+        font-size: 27px;
+    }
+
+    .stockist .right-area .text .btn {
+        padding: 10px 35px;
+    }
+
+    #logo {
+        margin-top: 700px;
+    }
+
+    #logo .logo {
+        width: 15%;
+        margin-right: 2%;
+    }
+
+    .footer div {
+        width: 33.3333%;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    #main p {
+        /*        top: 20%;*/
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    #main span {
+        top: 28%;
+        font-size: 15px;
+    }
+
+    .header .logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    #brand .first-area .img {
+        left: 7%;
+    }
+
+    #brand .first-area .desc {
+        top: 63%;
+        left: 7%;
+    }
+
+    #brand .second-area .img .img1 {
+        max-width: 500px;
+        left: 7%;
+        top: 70%;
+    }
+
+    #brand .second-area .img .img2 {
+        max-width: 500px;
+        left: 7%;
+
+    }
+
+    #brand .second-area .desc {
+        left: 7%;
+        top: 140%;
+        font-size: 27px;
+    }
+
+    #desc .text-area h1 {
+        font-size: 18px;
+    }
+
+    #desc .text-area span {
+        font-size: 14px;
+    }
+
+    #desc .text-area p {
+        font-size: 17px;
+    }
+
+    .stockist .left-area {
+        width: 100%;
+        float: none;
+    }
+
+    .stockist .right-area {
+        width: 100%;
+        float: none;
+    }
+
+    #logo {
+        margin-top: 0px;
+    }
+}
+
+@media (max-width: 480px) {
+    #main p {
+        /*
+        top: 15%;
+        left: 50%;
+        transform: translateX(-50%);
+*/
+        font-size: 24px;
+        line-height: 30px;
+    }
+
+    #main span {
+        top: 21%;
+        font-size: 13px;
+    }
+
+    .header .logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .shop .serum-area .btn {
+        white-space: nowrap;
+        bottom: 50px;
+        padding: 12px 60px;
+    }
+
+    .shop .stuff-area .btn {
+        white-space: nowrap;
+        bottom: 50px;
+        padding: 12px 60px;
+    }
+
+    #brand .first-area .img {
+        right: 7%;
+    }
+
+    #brand .first-area .desc {
+        font-size: 24px;
+        top: 51%;
+        left: 7%;
+    }
+
+    #brand .second-area .img .img1 {
+        max-width: 100%;
+        left: 0%;
+        top: 70%;
+    }
+
+    #brand .second-area .img .img2 {
+        max-width: 100%;
+        left: 0%;
+
+    }
+
+    #brand .second-area .desc {
+        left: 0%;
+        top: 135%;
+        font-size: 24px;
+    }
+
+    #desc .text-area h1 {
+        font-size: 17px;
+    }
+
+    #desc .text-area span {
+        font-size: 13px;
+    }
+
+    #desc .text-area p {
+        font-size: 14px;
+    }
+
+    .stockist .right-area .text h1 {
+        font-size: 24px;
+    }
+
+    .footer div {
+        width: 50%;
+    }
+}
